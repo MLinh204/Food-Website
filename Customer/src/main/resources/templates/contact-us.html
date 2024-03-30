@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<!-- Basic -->
+
+<head th:replace="fragments::head">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- Start Main Top -->
+<div th:replace="fragments::main-top">
+</div>
+<!-- End Main Top -->
+
+
+<!-- Start Main Top -->
+<header th:replace="fragments::main-header">
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div th:replace="fragments::top-search">
+</div>
+<!-- End Top Search -->
+
+
+<!-- Start All Title Box -->
+<div th:replace="fragments::all-title-box">
+</div>
+<!-- End All Title Box -->
+
+<!-- Start Contact Us  -->
+<div class="contactUs-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <div class="contactUs-information">
+                    <h2>CONTACT US</h2>
+                    <p>If you have any questions or concerns about our food, please phone us or email us a message.</p>
+                    <ul>
+                        <li>
+                            <p><i class="fas fa-map-marker-alt"></i>Address: ADDRESS: ĐẠI HỌC HÀ NỘI (HANU),KM 9 Đ. NGUYỄN TRÃI, P. VĂN QUÁN, HÀ ĐÔNG, HÀ NỘI
+                            </p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-phone-square"></i>Phone: 09632243748</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-envelope"></i>Email: abc@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Cart -->
+
+<!-- Start Feed  -->
+<div th:replace="fragments::instagram-box">
+</div>
+<!-- End Feed  -->
+
+<!-- Start Footer  -->
+<footer th:replace="fragments::footer">
+</footer>
+<div th:replace="fragments::script"></div>
+</body>
+
+</html>

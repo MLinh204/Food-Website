@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<!-- Basic -->
+
+<head th:replace="fragments::head">
+
+
+</head>
+
+<body>
+<div th:replace="fragments::main-top"></div>
+<!-- End Main Top -->
+
+<!-- Start Main Top -->
+<header th:replace="fragments::main-header"></header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div th:replace="fragments::top-search">
+</div>
+<!-- End Top Search -->
+
+<!-- Start Slider -->
+<div id="slides-shop" class="cover-slides">
+    <ul class="slides-container">
+        <li class="text-center">
+            <img src="images/Fast-Food-3-0.png" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>Welcome To <br> The Fast Food</strong></h1>
+                        <p class="m-b-40">Enjoy this moment! <br> Have you a good, fun working day and delicious meal!</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="text-center">
+            <img src="images/Fast-Food-3-1.png" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>Welcome To <br> The Fast Food</strong></h1>
+                        <p class="m-b-40">Enjoy this moment! <br> Have you a good, fun working day and delicious meal!</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="text-center">
+            <img src="images/Fast-Food-3-2.png" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <h1 class="m-b-20"><strong>Welcome To <br> The Fast Food</strong></h1>
+                        <p class="m-b-40">Enjoy this moment! <br> Have you a good, fun working day and delicious meal!</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="slides-navigation">
+        <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+    </div>
+</div>
+<!-- End Slider -->
+
+
+<!-- Start About Page  -->
+<div class="about-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="banner-frame"><img class="img-fluid" src="images/Intro1.png" alt=""/>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="noo-sh-title-top">We are <span> The Fast Food</span></h2>
+                <p>The Fast Food is a popular eatery that offers a wide variety of fast food options to satisfy any craving.
+                    Located in the heart of the city, this establishment is known for its quick service and delicious food.
+                    Whether you're in the mood for burgers, fries, or chicken nuggets, The Fast Food has got you covered.
+                    With affordable prices and generous portions, it's the perfect spot for a quick bite on the go. The atmosphere is casual and welcoming, with friendly staff who are always ready to assist you</p>
+                <p>Located in the heart of the city, The Fast Food is easily accessible and convenient for those on the go. The restaurant has a fast-paced environment, perfect for people who are in a rush but still want to enjoy a delicious meal.
+                    The interior of the restaurant is cozy and modern, with comfortable seating and plenty of space for groups or individuals.</p>
+                <p>The Fast Food is a fantastic spot for anyone who loves fast food and wants a quick, tasty meal.
+                    It's perfect for families, friends, and individuals who are looking for a casual dining experience.
+                    So why not visit The Fast Food and see for yourself what all the fuss is about?</p>
+                <a class="btn hvr-hover" href="#">Read More</a>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Trusted</h3>
+                    <p>The Fast Food only works with top processors and reliable importers.
+                        We handle quality products that we would serve to our friends and family.
+                        We do not agree with low-quality products and are committed to bringing our customers the best quality products.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Professional</h3>
+                    <p>Guests are invited to embark on a culinary adventure with us, where we strive to deliver not only exceptional food, but also a memorable experience that goes beyond just satisfying one's hunger.
+                        We are dedicated to crafting a remarkable dining experience for our guests
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Expert</h3>
+                    <p>After years of experience in the fastfood industry, we have gained extensive knowledge on where to source the highest quality products.
+                            Our menu combines classic and contemporary dishes,
+                        featuring a variety of fastfood options ranging from lighter fare to more indulgent presentations such as crab, shrimp, lobster, and more...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Feed  -->
+<div th:replace="fragments::instagram-box">
+</div>
+
+<!-- End Feed  -->
+
+
+<!-- Start Footer  -->
+<footer th:replace="fragments::footer">
+
+</footer>
+
+
+<!-- ALL JS FILES -->
+<div th:replace="fragments::script"></div>
+</body>
+
+</html>
