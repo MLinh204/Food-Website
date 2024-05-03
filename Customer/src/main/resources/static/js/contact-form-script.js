@@ -1,17 +1,17 @@
 $("#contactForm").validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
-        messageError();
-        messageSubmit(false, "Did you fill in the form properly?");
+        formError();
+        submitMSG(false, "Did you fill in the form properly?");
     } else {
         // everything looks good!
         event.preventDefault();
-        submitData();
+        submitForm();
     }
 });
 
 
-function submitData(){
+function submitForm(){
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
@@ -25,33 +25,31 @@ function submitData(){
         data: "name=" + name + "&email=" + email + "&msg_subject=" + msg_subject + "&message=" + message,
         success : function(text){
             if (text == "success"){
-                messageSuccess();
+                formSuccess();
             } else {
-                messageError();
-                messageSubmit(false,text);
+                formError();
+                submitMSG(false,text);
             }
         }
     });
 }
 
-const messageSuccess = () => {
+function formSuccess(){
     $("#contactForm")[0].reset();
-    messageSubmit(true, "Message Submitted!")
+    submitMSG(true, "Message Submitted!")
 }
 
-
-const messageError = () => {
+function formError(){
     $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
         $(this).removeClass();
     });
 }
 
-const messageSubmit = (check, msg) =>{
-    var messageClas = '';
-    if(!check){
-        messageClas = "h3 text-center text-danger";
+function submitMSG(valid, msg){
+    if(valid){
+        var msgClasses = "h3 text-center tada animated text-success";
     } else {
-        messageClas = "h3 text-center tada animated text-success";
+        var msgClasses = "h3 text-center text-danger";
     }
-    $("#msgSubmit").removeClass().addClass(messageClas).text(msg);
+    $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 }

@@ -3,10 +3,7 @@
 <!-- Basic -->
 
 <head th:replace="fragments::head">
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 </head>
 
 <body>
@@ -26,48 +23,171 @@
 </div>
 <!-- End Top Search -->
 
-
 <!-- Start All Title Box -->
-<div th:replace="fragments::all-title-box">
+<div th:replace="fragments::slider">
 </div>
 <!-- End All Title Box -->
 
-<!-- Start Contact Us  -->
-<div class="contactUs-container">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-sm-12">
-                <div class="contactUs-information">
-                    <h2>CONTACT US</h2>
-                    <p>If you have any questions or concerns about our food, please phone us or email us a message.</p>
-                    <ul>
-                        <li>
-                            <p><i class="fas fa-map-marker-alt"></i>Address: ADDRESS: ĐẠI HỌC HÀ NỘI (HANU),KM 9 Đ. NGUYỄN TRÃI, P. VĂN QUÁN, HÀ ĐÔNG, HÀ NỘI
-                            </p>
-                        </li>
-                        <li>
-                            <p><i class="fas fa-phone-square"></i>Phone: 09632243748</p>
-                        </li>
-                        <li>
-                            <p><i class="fas fa-envelope"></i>Email: abc@gmail.com</p>
-                        </li>
-                    </ul>
+    <!-- Start Contact Us  -->
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="contact-form-right">
+                        <h2>GET IN TOUCH</h2>
+                        <p>Fill in the below form to give us a respond about our products and services</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>                      
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+				<div class="col-lg-4 col-sm-12">
+                    <div class="contact-info-left">
+                        <h2>CONTACT US</h2>
+                        <p>Please send a message or call us if you want to comment our products or you feel that our product has problems.</p>
+                        <ul>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Km9, Nguyen Trai, Thanh Xuan, Ha Noi</p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-phone-square"></i>Phone: +84067631186</p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-envelope"></i>Email: abc@gmail.com</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Cart -->
+    <!-- End Cart -->
 
-<!-- Start Feed  -->
-<div th:replace="fragments::instagram-box">
-</div>
-<!-- End Feed  -->
+    <!-- Start Feed  -->
+<div class="instagram-box" th:fragment="instagram-box">
+    <div class="main-instagram owl-carousel owl-theme">
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="index.html"><img th:src="@{/images/cpu.jpg}" alt=""/></a>
 
-<!-- Start Footer  -->
-<footer th:replace="fragments::footer">
-</footer>
-<div th:replace="fragments::script"></div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <img th:src="@{/images/mainboard.jpeg}" alt=""/>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="index.html"><img th:src="@{/images/ram.png}" alt=""/></a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="index.html"><img th:src="@{/images/ssd.jpg}" alt=""/></a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="index.html"><img th:src="@{/images/case.jpg}" alt=""/></a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="index.html"><img th:src="@{/images/gpu.jpg}"
+                                          alt=""/></a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ins-inner-box">
+                <a href="index.html"><img th:src="@{/images/tannhiet.png}"
+                                          alt=""/></a>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- End Feed  -->
+
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Business Time</h3>
+							<ul class="list-time">
+								<li>Monday - Sunday: 08.00am to 10.00pm</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Contact Us</h3>
+							<ul class="list-time">
+								<li><i class="fas fa-phone-square"></i> Phone number: +84967631186</li>
+                                <li><i class="fas fa-envelope"></i> Email: abc@gmail.com</li>
+                                <li><i class="fas fa-map-marker-alt"></i> Address: Km9, Nguyen Trai, Thanh Xuan</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Social Media</h3>
+							<p>Come with SE2 Computer Store - Only Genuine </p>
+							<ul>
+                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+				
+    <!-- ALL JS FILES -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js."></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>

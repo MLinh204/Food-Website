@@ -66,7 +66,7 @@ body {
   line-height: 1.5;
   color: #858796;
   text-align: left;
-  background-color: #fff;
+  background-color: #ADD8E6;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -4722,7 +4722,7 @@ input[type="button"].btn-block {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #eaecf4;
+  background-color: #023a68;
   border-radius: 0.35rem;
 }
 
@@ -9828,7 +9828,6 @@ a:focus {
   background: rgba(90, 92, 105, 0.5);
   line-height: 46px;
 }
-
 .scroll-to-top:focus, .scroll-to-top:hover {
   color: white;
 }

@@ -211,6 +211,5 @@
 	$(".brand-box").niceScroll({
 		cursorcolor: "#9b9b9c",
 	});
-	
-	
+
 }(jQuery));

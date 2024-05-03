@@ -4,7 +4,6 @@
 
 <head th:replace="fragments::head">
 
-
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -30,19 +29,22 @@
 <!-- End Top Search -->
 
 <!-- Start All Title Box -->
-<div th:replace="fragments:: all-title-box">
+<div th:replace="fragments::slider">
+
 </div>
 <!-- End All Title Box -->
 
 <!-- Start Cart  -->
-<div class="cart-model">
-    <div class="container">
+<div class="cart-box-main">
+    <div th:if="${check}" class="text-center alert-warning">
+        <p th:text="${check}"></p>
+    </div>
+    <div class="container" th:if="${check == null}">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="table-parens responsive">
-                    <p class="text-center" th:if="${check}"><i class="text-info font-weight-bold text-center"></i>
-                       Don't have any item in your cart</p>
-                    <table class="table" th:if="${grandTotal}">
+            <div class="col-lg-8">
+
+                <div class="table-main table-responsive">
+                    <table class="table">
                         <thead>
                         <tr>
                             <th>Images</th>
@@ -54,37 +56,34 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="cartItem :  ${shoppingCart.cartItems}">
+                        <tr th:each="cartItem : ${shoppingCart.cartItem}">
                             <td class="thumbnail-img">
                                 <a href="#">
                                     <img class="img-fluid"
-                                         th:src="*{'data:image/jepg;base64,' + cartItem.product.image}" alt=""/>
+                                         th:src="*{'data:image/jpeg;base64,' + cartItem.product.image}" alt=""/>
                                 </a>
                             </td>
-                            <td class="name-priter">
+                            <td class="name-pr">
                                 <p th:text="${cartItem.product.name}"></p>
                             </td>
-                            <td class="price-priter">
-                                <p th:text="'$' + ${cartItem.unitPrice}"></p>
+                            <td class="price-pr">
+                                <p th:text="'$' + ${cartItem.product.costPrice}"></p>
                             </td>
                             <form th:action="@{/update-cart}" method="post">
-                                <input type = "hidden" name = "id" th:value = "${cartItem.product.id}" >
-                                <td class="quantity-box">
-                                    <input type="number" name="quantity" th:value="${cartItem.quantity}" size="4"
-                                           value="1" min="0" step="1"
-                                           class="c-input-text qty text">
+                                <input type="hidden" name="id" th:value="${cartItem.product.id}">
+                                <td class="quantity-box"><input type="number" size="4" th:value="${cartItem.quantity}"
+                                                                name="quantity" min="0" step="1"
+                                                                class="c-input-text qty text"></td>
+                                <td class="total-pr">
+                                    <p th:text="'$' + ${cartItem.totalPrice}"></p>
                                 </td>
-                                <td class="total-priter">
-                                    <p th:text="'$' + ${cartItem.unitPrice * cartItem.quantity}"></p>
-                                </td>
-                                <td>
+                                <td class="remove-pr">
                                     <button type="submit" name="action" value="update" title="Update"
-                                            class="btn btn-primary">
-                                        Edit
+                                            class="btn btn-primary">Update
                                     </button>
-                                    <button type="submit" name="action" value="delete" title="Update"
-                                            class="btn btn-danger">
-                                        Delete
+
+                                    <button type="submit" name="action" value="delete" title="Delete"
+                                            class="btn btn-warning">Delete
                                     </button>
                                 </td>
                             </form>
@@ -93,16 +92,19 @@
                     </table>
                 </div>
             </div>
-        </div>
-
-        <div class="row my-5" th:if = "${grandTotal}">
-            <div class="col-lg-8 col-sm-12"></div>
-            <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-4 col-sm-12"
+                 style="border: 3px solid black;
+                border-radius: 10px;
+                 padding: 10px;">
                 <div class="order-box">
                     <h3>Order summary</h3>
                     <div class="d-flex">
                         <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold"> </div>
+                        <div class="ml-auto font-weight-bold" th:text="${subTotal}"></div>
+                    </div>
+                    <div class="d-flex">
+                        <h4>Discount</h4>
+                        <div class="ml-auto font-weight-bold"> $0</div>
                     </div>
                     <hr class="my-1">
                     <div class="d-flex">
@@ -116,14 +118,16 @@
                     <hr>
                     <div class="d-flex gr-total">
                         <h5>Grand Total</h5>
-                        <div class="ml-auto h5" th:text="'$' + ${grandTotal + 2}"></div>
+                        <div class="ml-auto h5" th:text=" '$' + ${subTotal + 2 }"></div>
                     </div>
                     <hr>
                 </div>
-            </div>
-            <div class="col-12 d-flex shopping-box"><a href="checkout.html" th:href="@{/check-out}" class="ml-auto btn hvr-hover">Checkout</a>
+                <div class="col-12 d-flex shopping-box"><a th:href="@{/check-out}" class="ml-auto btn hvr-hover">Checkout</a>
+                </div>
             </div>
         </div>
+
+
     </div>
 </div>
 <!-- End Cart -->
@@ -136,7 +140,8 @@
 
 
 <!-- Start Footer  -->
-<footer th:replace="fragments::footer"></footer>
+<footer th:replace="fragments::footer">
+</footer>
 
 
 <div th:replace="fragments::script"></div>

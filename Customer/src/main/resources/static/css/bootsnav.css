@@ -226,13 +226,15 @@ li.close-full-menu{
 .attr-nav > ul > li > a span.badge{
     position: absolute;
     top: 50%;
-    margin-top: -15px;
+    margin-top: -20px;
     right: 5px;
     font-size: 10px;
     padding: 0;
     width: 15px;
     height: 15px;
     padding-top: 2px;
+    background: #4f96d1 ;
+    border-radius: 999px;
 }
 
 .attr-nav > ul > li.dropdown ul.dropdown-menu{
@@ -546,7 +548,7 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a:hover,
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a:hover{
         background-color: transparent;
-		color: #b0b435;
+		color: #b3e3f7;
 		-ms-transform: translateX(3px);
 		-webkit-transform: translateX(3px);
 		transform: translateX(3px);
