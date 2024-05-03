@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: header">
+</head>
+<body id="page-top">
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- Sidebar -->
+    <ul th:replace="fragments :: sidebar">
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav th:replace="fragments :: topbar"></nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div th:if="${size == 0}">
+                    <p>No Vouchers</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-add-product" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add new voucher</button>
+                <div th:if = "${success}" class="text-center alert alert-success">
+                    <p th:text="${success}"></p>
+                </div>
+                <div th:if = "${failed}" class="text-center alert alert-danger">
+                    <p th:text="${failed}"></p>
+                </div>
+                <table class="table table-bordered" th:if="${size > 0}">
+                    <thead>
+                    <tr>
+                        <th scope="col">Voucher Code</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
+                        <th scope="col">Discount Percentage</th>
+                        <th scope="col">Max Discount Amount</th>
+                        <th scope="col">Min Purchase Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="voucher : ${vouchers}">
+                        <th scope="row" th:text="${voucher.code}"></th>
+                        <th th:text="${voucher.description}"></th>
+                        <td th:text="${voucher.startDate}"></td>
+                        <td th:text="${voucher.endDate}"></td>
+                        <td th:text="${voucher.discountPercentage}">
+                            <!-- Discount Percentage column content -->
+                        </td >
+                        <td th:text="${voucher.maxDiscountAmount}">
+                            <!-- Max Discount Amount column content -->
+                        </td>
+                        <td th:text="${voucher.minPurchaseAmount}">
+                            <!-- Min Purchase Amount column content -->
+                        </td>
+                        <td>
+                            <a th:href="@{/delete-voucher/{id}(id=${voucher.id})}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer th:replace="fragments :: footer">
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a th:replace="fragments :: scroll">
+</a>
+
+<!-- Logout Modal-->
+
+<!--Add Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form th:action="@{/add-voucher}" method="post" th:object="${voucherNew}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Voucher</h5>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="recipient-code" class="col-form-label">Code:</label>
+                        <input type="text" class="form-control" th:field="*{code}" id="recipient-code">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-description" class="col-form-label">Description:</label>
+                        <input type="text" class="form-control" th:field="*{description}" id="recipient-description">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-start-date" class="col-form-label">Start Date:</label>
+                        <input type="date" class="form-control" th:field="*{startDate}" id="recipient-start-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-end-date" class="col-form-label">End Date:</label>
+                        <input type="date" class="form-control" th:field="*{endDate}" id="recipient-end-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-percentage" class="col-form-label">Discount Percentage:</label>
+                        <input type="text" class="form-control" th:field="*{discountPercentage}" id="recipient-percentage">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-max-discount" class="col-form-label">Max Discount Amount:</label>
+                        <input type="text" class="form-control" th:field="*{maxDiscountAmount}" id="recipient-max-discount">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-min-purchase" class="col-form-label">Min Purchase Amount:</label>
+                        <input type="text" class="form-control" th:field="*{minPurchaseAmount}" id="recipient-min-purchase">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--end-->
+<!-- Bootstrap core JavaScript-->
+<div th:replace="fragments :: script"></div>
+<script th:src="@{/js/categories.js}"></script>
+
+</body>
+
+</html>
