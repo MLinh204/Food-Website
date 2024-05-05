@@ -222,10 +222,10 @@
     .login-box .bootstrap-select .btn-light{
      padding: 4px;
      font-size: 14px;
-     background-color: steelblue;
+     background-color: #b44646;
      color: #fff;
-     border: none;
-     border-radius: 0px;
+     border: #71717a;
+     border-radius: 120px;
      overflow: hidden;
      text-overflow: ellipsis;
      white-space: nowrap;
@@ -1582,7 +1582,7 @@ button[disabled] {
      padding: 10px 0px;
 }
  .all-title-box .breadcrumb{
-     background-color: steelblue;
+     background-color: #b44646;
      margin: 0px;
      display: inline-block;
      border-radius: 50px;

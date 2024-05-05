@@ -58,9 +58,14 @@
             </div>
 
             <form th:action="@{/do-login}" method="post">
+                <style>
+                .input-form input::placeholder {
+                 color: white; /* Change the color to white */
+                 }
+                </style>
                 <div class="input-form">
                     <!-- <span>User name</span> -->
-                    <input type="text" placeholder="Name" name="username">
+                    <input type="text" placeholder="Email" name="username">
                 </div>
                 <div class="input-form">
                     <!-- <span>Password</span> -->
@@ -84,12 +89,6 @@
 
 </section>
 
-
-<!-- Start All Title Box -->
-<div th:replace="fragments::instagram-box">
-</div>
-<!-- End All Title Box -->
-<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
 <!-- ALL JS FILES -->
 <div th:replace="fragments::script"></div>

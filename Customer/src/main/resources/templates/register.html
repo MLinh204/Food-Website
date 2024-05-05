@@ -40,6 +40,11 @@
                 <p th:text="${success}"></p>
             </div>
             <form th:action="@{/do-register}" method="post" th:object="${customerDto}">
+                <style>
+                .input-form input::placeholder {
+                color: white; /* Change the color to white */
+                }
+                </style>
                 <div class="input-form">
                     <!-- <span>User name</span> -->
                     <input type="text" th:field = "*{firstName}" placeholder="First Name" name="">
