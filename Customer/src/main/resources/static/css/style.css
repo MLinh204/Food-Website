@@ -843,12 +843,11 @@ section .noi-dung .form .icon-dang-nhap li i{
     font-size: 24px;
 }
 .mainDiv {
-    background: url("../images/beach.avif") no-repeat center center;
     display: flex;
     min-height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: #bbbbc4;
     font-family: 'Open Sans', sans-serif;
   }
  .cardStyle {
